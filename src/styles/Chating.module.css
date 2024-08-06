@@ -19,7 +19,42 @@
     transition: border-color 0.3s ease; /* 테두리 색상 변화에 애니메이션 효과 */
     margin-right: 10px; /* 버튼과 간격 추가 */
   }
+  .chatLog {
+    position : absolute;
+    width: 410px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    max-height: 300px; /* 원하는 최대 높이 설정 */
+    margin-bottom: 10px;
+    z-index:1;
+    bottom : 0;
+    margin-right : 150px;
+    margin-bottom: 75px;
+    height : 200px;
+  }
   
+  .chatMessage {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    max-width: 80%; /* 메시지 최대 너비 설정 */
+    word-wrap: break-word; /* 단어 줄바꿈 */
+  }
+  
+  /* 메시지 배치 스타일 */
+  .chatMessage:nth-child(odd) {
+    align-self: flex-start;
+    background-color: #d0f0c0;
+  }
+  
+  .chatMessage:nth-child(even) {
+    align-self: flex-end;
+    background-color: #f0d0c0;
+  }
   .chatingInput:focus {
     border-color: #339CFF; /* 포커스 시 테두리 색상 변경 */
   }

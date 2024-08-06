@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/Welcome.module.css'
 import { useNavigate } from 'react-router-dom';
-
+import Home from '../components/Home';
 
 const Welcome = () => {
     const navigate = useNavigate();
@@ -21,6 +21,7 @@ const Welcome = () => {
             sethelperTextVisibility('visible')
             return;
         }
+        <Home username = {nickname}/>
 
 
         navigate('/map');
