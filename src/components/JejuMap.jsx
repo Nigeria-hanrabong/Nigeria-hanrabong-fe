@@ -6,7 +6,7 @@ const JejuMap = () => {
 
     const handlePinClick = (location,name) => {
       alert(`${location}에 오신것을 환영합니다!`);
-      navigate(`/${name}`);
+      navigate(`/details/${name}`);
     };
   
     return (

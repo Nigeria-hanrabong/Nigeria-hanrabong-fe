@@ -1,21 +1,61 @@
-import FishSuccessModal from '../components/FishSuccessModal';
-import Logo from '../components/Logo';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import styles from '../styles/Welcome.module.css'
+import { useNavigate } from 'react-router-dom';
+
+
 const Welcome = () => {
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const navigate = useNavigate();
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  }; // 부모 요소에 이걸 호출해주면 된다
-  // 이부분을 이안 코드랑 합치면 모달창 완성 !
+    const [nickname, setNickname] = useState("");
+    const [helperTextVisibility, sethelperTextVisibility] = useState('hidden')
+
+    const moveToMap = () => {
+        setNickname("");
+
+        if (!nickname || /\s/.test(nickname)) {
+            sethelperTextVisibility('visible')
+            return;
+        }
+
+        if (nickname.length >= 8) {
+            sethelperTextVisibility('visible')
+            return;
+        }
+
+
+        navigate('/map');
+    }
+
+    const updateNicknameInput = (e) => {
+        setNickname(e.target.value);
+    }
+
     return (
-      <div>
+    <>
+        <div className={styles.welcomeBody}>
+            <div className={styles.nicknameForm}>
 
-        <FishSuccessModal isOpen={isModalOpen} onClose={handleCloseModal} />
-        
-      </div>
+                <div className={styles.nicknameInputBox}>
+                    <input 
+                    id='nicknameInput' 
+                    placeholder='닉네임을 입력해주세요.' 
+                    className={styles.nicknameInput}
+                    value={nickname}
+                    onChange={updateNicknameInput}
+                    ></input>
+                </div>
+                <div className={styles.helperText} style={{visibility: helperTextVisibility}}>*유효하지 않은 닉네임입니다.</div>
+
+                <div>
+                    <button className={styles.nicknameBtn} onClick={moveToMap}>입장하기</button>
+                </div>
+            </div>
+            
+        </div>
+    </>
     );
-  }
+    
+}
 
 export default Welcome;
 
