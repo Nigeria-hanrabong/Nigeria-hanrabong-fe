@@ -1,0 +1,74 @@
+.chatingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* 너비를 조정할 수 있습니다 */
+    max-width: 600px; /* 최대 너비 설정 */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    bottom: 20px; /* 창의 아래에서 20px 위에 위치 */
+    right : 10px;
+
+  }
+  
+  .chatingInput {
+    flex: 1;
+    padding: 15px 20px; /* 내부 여백 */
+    font-size: 16px; /* 텍스트 크기 */
+    border: 2px solid #007BFF; /* 테두리 색상 */
+    border-radius: 25px; /* 모서리 둥글게 */
+    outline: none; /* 포커스 시 기본 테두리 제거 */
+    transition: border-color 0.3s ease; /* 테두리 색상 변화에 애니메이션 효과 */
+    margin-right: 10px; /* 버튼과 간격 추가 */
+  }
+  
+  .chatingInput:focus {
+    border-color: #339CFF; /* 포커스 시 테두리 색상 변경 */
+  }
+  
+  .sendButton {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sendButton:hover {
+    background-color: #45a049;
+  }
+  
+  .sendButton:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  .sendIcon {
+    width: 0;
+    height: 0;
+    font-size : 25px;
+    margin-left : -28px;
+    margin-bottom :px;
+    transform: rotate(-60deg);
+  }
+  .ChatingDetails{
+    
+    width: 50px;
+    height: 50px;
+    background-color: #3399FF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left:15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }

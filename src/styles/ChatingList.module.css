@@ -1,0 +1,50 @@
+.dataContainer {
+    position: relative;
+    display: inline-block;
+    padding: 15px 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    margin: 20px;
+    width : 600px;
+    top : -5px;
+    text-align : center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+  }
+  .dataSort{
+    text-align : center;
+  }
+  
+  .dataDisplay {
+    font-size: 16px;
+    font-weight: bold;
+    text-align : left;
+  }
+  
+  .hoverData {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    width : 600px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight : bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+  } 
+  
+  .dataItem {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .dataItem:last-child {
+    border-bottom: none;
+  }
