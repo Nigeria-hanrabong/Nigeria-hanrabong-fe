@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
 import styles from '../styles/ChatingList.module.css';
 
-const ChatingList= () => {
-  const [showData, setShowData] = useState(false);
-  const data = Array.from({ length: 10 }, (_, i) => `${i + 1}번째 채팅 목록이에요!`);
-  const nicknameArray = ['danny','haliey','ian','theo','alan']
+const ChatingList = () => {
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([
+    "안녕하세요",
+    "어떻게 지내세요?",
+    "좋은 하루 보내세요",
+    "안녕히 계세요"
+  ]);
 
-  const handleMouseEnter = () => {
-    setShowData(true);
+  const handleSend = () => {
+    let copyChat = [...messages];
+    if(input != '') {
+      copyChat.push(input);
+      setMessages(copyChat);
+      setInput('');
+    }
   };
 
-  const handleMouseLeave = () => {
-    setShowData(false);
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSend();
+    }
   };
 
   return (
-    <div className = {styles.dataSort}>
-    <div 
-      className={styles.dataContainer} 
-      onMouseEnter={handleMouseEnter} 
-      onMouseLeave={handleMouseLeave} 
-    >
-      <div className={styles.dataDisplay}>유저들의 응원 메시지를 확인해보세요!</div>
-      {showData && (
-        <div className={styles.hoverData}>
-          {data.map((item, index)   => (
-            <div key={index} className={styles.dataItem}>
-              <div className={styles.dataItemDetail}>{nicknameArray[index % 5]}: {item}</div>
-              
-            </div>
-          ))}
+    <div className={styles.chatLog}>
+      {messages.map((message, index) => (
+        <div key={index} className={styles.chatMessage}>
+          {message}
         </div>
-      )}
-    </div>
+      ))}
     </div>
   );
 };

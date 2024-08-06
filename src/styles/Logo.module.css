@@ -7,6 +7,11 @@
   font-weight: normal;
   font-style: normal;
 }
+.logoContainer{
+  width : 100% ;
+  height : 100%;
+  
+}
 .Ranking {
     padding: 10px 20px;
     font-size: 16px;

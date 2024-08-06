@@ -1,11 +1,16 @@
 .mapContainer {
     position: relative;
-    width: 800px;
-    height: 600px;
+
+
+    background-color: #D9EAF7;
+
     margin: auto;
     margin-top: 50px;
   }
-  
+  .mapBackground{
+
+    background-color: #D9EAF7;
+  }
   .jejuMap {
     width: 100%;
     height: 100%;

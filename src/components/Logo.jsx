@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Ranking from './Ranking';
 import styles from '../styles/Logo.module.css';
-import ChatingList from './ChatingList'
 const Logo = () => {
   const [showRanking, setShowRanking] = useState(false);
 

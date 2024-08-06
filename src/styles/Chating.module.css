@@ -1,16 +1,10 @@
 .chatingContainer {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%; /* 너비를 조정할 수 있습니다 */
-    max-width: 600px; /* 최대 너비 설정 */
-    padding: 20px;
-    box-sizing: border-box;
-    position: fixed;
-    right: 0;
-    bottom: 20px; /* 창의 아래에서 20px 위에 위치 */
-    right : 10px;
-
+    flex-direction: column;
+    position: relative;
   }
   
   .chatingInput {
@@ -39,7 +33,13 @@
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  }
+
+    
+    position :relative;
+    right : -400px;
+    top : -50px;
+    
+}
   
   .sendButton:hover {
     background-color: #45a049;
@@ -69,6 +69,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left:15px;
+    position :relative;
+    right : -4px;
+
+    top : -100px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
+
+  .chatingDetails:hover {
+    background-color: #66b2ff;
+  }
+
+
