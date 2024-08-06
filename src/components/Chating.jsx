@@ -3,7 +3,7 @@ import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 import styles from '../styles/Chating.module.css';
 
-const Chating = () => {
+const Chating = (props) => {
   const [showChatingList, setShowChatingList] = useState(false);
   const [messages, setMessages] = useState([
     { content: "안녕하세요", sender: "Alice" },
@@ -19,6 +19,7 @@ const Chating = () => {
   const messagesEndRef = useRef(null);
   const clientRef = useRef(null);
 
+  const {username} = props;
   const handleButtonClick = () => {
     setShowChatingList(!showChatingList);
   };
@@ -47,7 +48,7 @@ const Chating = () => {
 
   const sendMessage = () => {
     if (content.trim() && clientRef.current.connected) {
-      const message = { content: content, sender: "username" }; // 여기서 username을 적절히 설정해야 합니다
+      const message = { content: content, sender: {username} }; // 여기서 username을 적절히 설정해야 합니다
       clientRef.current.publish({
         destination: '/app/sendMessage',
         body: JSON.stringify(message),

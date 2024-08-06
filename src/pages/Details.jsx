@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styles from '../styles/Details.module.css'
 import fishingLob from '../assets/‘DALL·E 2024-08-05 23.06.32 - A detailed view of a fishing rod from a far perspective. The scene shows the entire fishing rod extending out over a serene lake, with lush greenery i 복사본 3_1’의 배경이 제거됨.png';
 import questionIcon from '../assets/question.png'
 import point from '../assets/‘낚시찌’의 배경이 제거됨.png'
+import { useParams } from 'react-router-dom'; 
 import FishSuccessModal from '../components/FishSuccessModal'; // FishSuccessModal 컴포넌트 임포트
 const Details = () => {
+    const { name } = useParams();
     const navigate = useNavigate();
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
@@ -38,7 +40,6 @@ const Details = () => {
                 if (isShaking) {
                     alert('실패했습니다.');
                     setIsShaking(false);
-                    window.location.reload();
                 }
             }, 3000); // 3초 동안 애니메이션 실행
         }, randomDelay);
@@ -50,9 +51,8 @@ const Details = () => {
 
         if (isShaking) {
             setShowModal(true);
-        } else {
-            window.location.reload();
-            
+        }else {
+            alert('실패했습니다.');
         }
 
         setIsShaking(false);
@@ -100,7 +100,7 @@ const Details = () => {
 
                 <img className={styles.fishingRod} src={fishingLob} alt="낚시대" />
 
-                {showModal && <FishSuccessModal isOpen={showModal} onClose={() => setShowModal(false)} />}
+                {showModal && <FishSuccessModal isOpen={showModal} name = {name} onClose={() => setShowModal(false)} />}
             </div>
         </>
     );

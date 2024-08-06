@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import styles from '../styles/Welcome.module.css'
 import { useNavigate } from 'react-router-dom';
-import Home from '../components/Home';
-
+import Chating from '../components/Chating'
+import axios from 'axios';
 const Welcome = () => {
     const navigate = useNavigate();
 
     const [nickname, setNickname] = useState("");
     const [helperTextVisibility, sethelperTextVisibility] = useState('hidden')
 
-    const moveToMap = () => {
+    const moveToMap = async () => {
         setNickname("");
 
         if (!nickname || /\s/.test(nickname)) {
@@ -21,9 +21,11 @@ const Welcome = () => {
             sethelperTextVisibility('visible')
             return;
         }
-        <Home username = {nickname}/>
-
-
+        <Chating username = {nickname}/>
+        
+        const result = await axios.post('http://localhost:8080/api/v1/users', {
+        nickname: {nickname}
+      });
         navigate('/map');
     }
 

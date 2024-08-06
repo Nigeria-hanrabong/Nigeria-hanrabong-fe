@@ -20,7 +20,7 @@ const JejuMap = () => {
         />
         <div
           className={styles.mapPin}
-          onClick={() => handlePinClick('제주시','jeju')}
+          onClick={() => handlePinClick('제주시','제주')}
         >
           <span className={styles.pinLabel}>제주시</span>
           
@@ -29,7 +29,7 @@ const JejuMap = () => {
 
         <div
           className={styles.mapPin2}
-          onClick={() => handlePinClick('서귀포시','seoguipo')}
+          onClick={() => handlePinClick('서귀포시','서귀포')}
         >
           <span className={styles.pinLabel}>서귀포시</span>
           
@@ -37,7 +37,7 @@ const JejuMap = () => {
         
         <div
           className={styles.mapPin3}
-          onClick={() => handlePinClick('성산읍','seongsan')}
+          onClick={() => handlePinClick('성산읍','성산읍')}
         >
           <span className={styles.pinLabel}>성산읍</span>
           
@@ -46,7 +46,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin4}
 
-          onClick={() => handlePinClick('구좌읍','guzwa')}
+          onClick={() => handlePinClick('구좌읍','구좌')}
         >
           <span className={styles.pinLabel}>구좌읍</span>
           
@@ -55,7 +55,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin5}
 
-          onClick={() => handlePinClick('표선면','pyosun')}
+          onClick={() => handlePinClick('표선면','표선')}
         >
           <span className={styles.pinLabel}>표선면</span>
           
@@ -64,7 +64,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin6}
 
-          onClick={() => handlePinClick('조천읍','chochun')}
+          onClick={() => handlePinClick('조천읍','조천')}
         >
           <span className={styles.pinLabel}>조천읍</span>
           
@@ -73,7 +73,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin7}
 
-          onClick={() => handlePinClick('남원읍','namwon')}
+          onClick={() => handlePinClick('남원읍','남원읍')}
         >
           <span className={styles.pinLabel}>남원읍</span>
           
@@ -82,7 +82,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin8}
   
-          onClick={() => handlePinClick('중문','chungmoon')}
+          onClick={() => handlePinClick('중문','중문')}
         >
           <span className={styles.pinLabel}>중문</span>
           
@@ -91,7 +91,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin9}
 
-          onClick={() => handlePinClick('애월읍','ewool')}
+          onClick={() => handlePinClick('애월읍','애월')}
         >
           <span className={styles.pinLabel}>애월읍</span>
           
@@ -100,7 +100,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin10}
 
-          onClick={() => handlePinClick('한림읍','hanlim')}
+          onClick={() => handlePinClick('한림읍','한림')}
         >
           <span className={styles.pinLabel}>한림읍</span>
           
@@ -109,7 +109,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin11}
 
-          onClick={() => handlePinClick('한경면','hankyung')}
+          onClick={() => handlePinClick('한경면','한경')}
         >
           <span className={styles.pinLabel}>한경면</span>
           
