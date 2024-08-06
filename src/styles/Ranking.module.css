@@ -22,7 +22,7 @@
   color : #000000;
 }
 
-button {
+/* button {
   padding: 10px 20px;
   font-size: 1em;
   background-color: #007bff;
@@ -34,7 +34,7 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
+} */
 
 .rankingList {
   display: flex;
