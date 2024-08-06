@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Ranking from './Ranking';
+import Ranking from '../components/Ranking'
 import styles from '../styles/Logo.module.css';
 const Logo = () => {
   const [showRanking, setShowRanking] = useState(false);
@@ -14,9 +14,7 @@ const Logo = () => {
 
   return (
     <div className={styles.logoContainer}>
-      <div className={styles.title}>바다이야기</div>
 
-      <div className={styles.buttons}>
         <button 
           className={styles.Ranking} 
           onMouseEnter={handleMouseEnter} 
@@ -24,8 +22,12 @@ const Logo = () => {
         >
           랭킹 보기
         </button>
-        {showRanking && <Ranking />}
-      </div>
+        {showRanking && <Ranking />} 
+        <div className={styles.title}>바다이야기</div>
+
+      
+      
+ 
     </div>
   );
 };

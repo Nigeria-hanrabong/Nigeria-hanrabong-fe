@@ -9,17 +9,20 @@ const Chating = () => {
   };
 
   return (
-    <div className={styles.chatingContainer}>
-        {showChatingList && <ChatingList />}
-      <input type="text" className={styles.chatingInput} placeholder="메시지를 입력하세요" />
-      <button className={styles.sendButton}>
-        <span className={styles.sendIcon}>&#10148;</span>
-      </button>
-      <button className={styles.ChatingDetails} onClick={handleButtonClick}>
-        <span className={styles.details}>&#128172;</span>
+    <>
+      {showChatingList && <ChatingList />}
+      
+      <div className={styles.chatingContainer}>
+        <input type="text" className={styles.chatingInput} placeholder="메시지를 입력하세요" />
+        <button className={styles.sendButton}>
+          <span className={styles.sendIcon}>&#10148;</span>
+        </button>
+        <button className={styles.ChatingDetails} onClick={handleButtonClick}>
+          <span className={styles.details}>&#128172;</span>
 
-      </button>
-    </div>
+        </button>
+      </div>
+    </>
   );
 };
 

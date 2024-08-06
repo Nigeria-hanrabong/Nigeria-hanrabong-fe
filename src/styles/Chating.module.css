@@ -1,14 +1,16 @@
 .chatingContainer {
-    width: 100%;
-    max-width: 400px;
+    width: 600px;
+    height : 100px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
   }
   
   .chatingInput {
-    flex: 1;
+    width : 400px;
     padding: 15px 20px; /* 내부 여백 */
     font-size: 16px; /* 텍스트 크기 */
     border: 2px solid #007BFF; /* 테두리 색상 */
@@ -34,10 +36,9 @@
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
-    
-    position :relative;
-    right : -400px;
-    top : -50px;
+    margin: 20px;
+
+
     
 }
   
@@ -70,9 +71,7 @@
     align-items: center;
     cursor: pointer;
     position :relative;
-    right : -4px;
 
-    top : -100px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
 

@@ -1,17 +1,19 @@
 import React from 'react';
-import Ranking from '../components/Ranking';
+
 import Logo from '../components/Logo';
-import JejuMap from '../components/JejuMap';
-import Chating from '../components/Chating';
+import JejuMap from "../components/JejuMap"
+import Chating from "../components/Chating"
+import styles from '../styles/Map.module.css'
+
 
 const Map = () => {
 
     return (
-    <div className = "Map">
+    <div className={styles.Map}>
       <Logo />
       <JejuMap />
-      <Chating />
-      <ChatingList />
+      <Chating /> 
+
     </div>
     );
     

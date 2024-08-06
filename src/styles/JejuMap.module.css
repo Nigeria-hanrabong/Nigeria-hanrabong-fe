@@ -1,347 +1,713 @@
 .mapContainer {
-    position: relative;
+
+  position: relative;
+
+  width: 800px;
+
+  height: 600px;
+
+  margin: auto;
+
+  margin-top: 50px;
+
+}
 
 
-    background-color: #D9EAF7;
 
-    margin: auto;
-    margin-top: 50px;
-  }
-  .mapBackground{
 
-    background-color: #D9EAF7;
-  }
-  .jejuMap {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    color :#D9EAF7;
-  }
-  .pinLabel {
-    display: none;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 12px;
-    white-space: nowrap;
-    transform: rotate(45deg);
-  }
-  .mapPin {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    cursor: pointer;
-    bottom : 445px;
-    left : 360px;
-  }
+.jejuMap {
 
-  .mapPin::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin2 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    cursor: pointer;
-    bottom : 220px;
-    left : 410px;
-  }
-  .mapPin2::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin3 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 350px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 630px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin3::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin4{
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 530px;
-    left: 570px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    
-  }
-  .mapPin4::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin5 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    bottom: 330px;
-    left: 590px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-  }
-  .mapPin5::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin6 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 560px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 470px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin6::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin7 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 340px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 490px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin7::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin8 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    bottom: 330px;
-    left: 320px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin8::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin9 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 560px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 260px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin9::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin10 {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 530px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 180px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin10::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .mapPin11 {
-    position: relative;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    cursor: pointer;
-    bottom: 480px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    left: 120px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
- 
-    
-  }
-  .mapPin11::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  
-  .mapPin:hover .pinLabel {
-    display: block;
-  }
+  width: 800px;
 
-  .mapPin2:hover .pinLabel {
-    display: block;
-  }
+  height: 600px;
 
-  .mapPin3:hover .pinLabel {
-    display: block;
-  }
+  object-fit: cover;
 
-  .mapPin4:hover .pinLabel {
-    display: block;
-  }
+  color :#D9EAF7;
 
-  .mapPin5:hover .pinLabel {
-    display: block;
-  }
+}
 
-  .mapPin6:hover .pinLabel {
-    display: block;
-  }
+.pinLabel {
 
-  .mapPin7:hover .pinLabel {
-    display: block;
-  }
+  display: none;
 
-  .mapPin8:hover .pinLabel {
-    display: block;
-  }
+  position: absolute;
 
-  .mapPin9:hover .pinLabel {
-    display: block;
-  }
+  top: -25px;
 
-  .mapPin10:hover .pinLabel {
-    display: block;
-  }
+  left: 50%;
 
-  .mapPin11:hover .pinLabel {
-    display: block;
-  }
+  transform: translateX(-50%);
+
+  background-color: white;
+
+  padding: 2px 5px;
+
+  border-radius: 3px;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  transform: rotate(45deg);
+
+}
+
+.mapPin {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  cursor: pointer;
+
+  bottom : 445px;
+
+  left : 360px;
+
+}
+
+
+
+
+.mapPin::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin2 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  cursor: pointer;
+
+  bottom : 220px;
+
+  left : 410px;
+
+}
+
+.mapPin2::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin3 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 350px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 630px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin3::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin4{
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 530px;
+
+  left: 570px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+
+
+
+}
+
+.mapPin4::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin5 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  bottom: 330px;
+
+  left: 590px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+}
+
+.mapPin5::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin6 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 560px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 470px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin6::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin7 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 340px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 490px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin7::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin8 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  bottom: 330px;
+
+  left: 320px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin8::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin9 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 560px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 260px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin9::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin10 {
+
+  position: relative;
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 530px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 180px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin10::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+.mapPin11 {
+
+  position: relative;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  width: 20px;
+
+  height: 20px;
+
+  background-color: red;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  bottom: 480px;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  left: 120px; /* 원하는 만큼 값을 조정하여 오른쪽으로 이동 */
+
+
+
+
+
+
+
+}
+
+.mapPin11::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  background-color: white;
+
+  border-radius: 50%;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+
+
+
+
+.mapPin:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin2:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin3:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin4:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin5:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin6:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin7:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin8:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin9:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin10:hover .pinLabel {
+
+  display: block;
+
+}
+
+
+
+
+.mapPin11:hover .pinLabel {
+
+  display: block;
+
+}

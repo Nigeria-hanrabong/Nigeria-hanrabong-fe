@@ -10,7 +10,9 @@ const JejuMap = () => {
     };
   
     return (
-      <div className={styles.mapContainer}>
+      
+
+        <div className={styles.mapContainer}>
         <img
           src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2021/02/urbanbrush-20210218222336410564.jpg"
           alt="Jeju Map"
@@ -114,6 +116,7 @@ const JejuMap = () => {
         </div>
         {/* 다른 핀 추가 가능 */}
       </div>
+
     );
 };
 

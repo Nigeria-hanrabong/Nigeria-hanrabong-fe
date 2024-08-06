@@ -8,25 +8,29 @@
   font-style: normal;
 }
 .logoContainer{
-  width : 100% ;
-  height : 100%;
-  
+  width : 100%;
+  height : 80px;
+  display : flex;
+  flex-direction: row;
+  justify-content:center;
 }
-.Ranking {
-    padding: 10px 20px;
-    font-size: 16px;
- 
-    margin: 10px;
-    cursor: pointer;
-   
-    color: white; /* 버튼 텍스트 색상 */
-    border: none; /* 버튼 테두리 제거 */
-    border-radius: 5px; /* 버튼 모서리 둥글게 */
 
-    transition: all 0.3s ease; /* 애니메이션 효과 */
-    position : relative;
-   
-    background-color: #7fccde;
+.Ranking {
+  position : absolute;
+  width : 80px;
+  height : 20px;
+  left : 0;
+  margin : 20px 20px;
+
+  font-size: 16px;
+  cursor: pointer;
+  color: white; /* 버튼 텍스트 색상 */
+  border: none; /* 버튼 테두리 제거 */
+  border-radius: 5px; /* 버튼 모서리 둥글게 */
+  transition: all 0.3s ease; /* 애니메이션 효과 */
+
+  
+  background-color: #7fccde;
   box-shadow: 0 0 0 1px #7fccde inset,
         0 0 0 2px rgba(255,255,255,0.15) inset,
         0 8px 0 0 rgba(102, 164, 178, .6),
@@ -35,6 +39,7 @@
   }
 
   .title {
+    position : absolute;
     font-family: 'SF_HambakSnow', serif; 
     font-size: 54px; /* 텍스트 크기 */
     font-weight: bold; /* 굵게 */
@@ -43,14 +48,9 @@
     background: linear-gradient(90deg, #00C6FF, #66B2FF); /* 배경 그라디언트 */
     -webkit-background-clip: text; /* 텍스트 부분에만 배경 적용 (웹킷 브라우저) */
     -webkit-text-fill-color: transparent; /* 텍스트 색상을 투명하게 (웹킷 브라우저) */
-    display: inline-block; /* 크기 조정을 위해 인라인 블록으로 설정 */
-    padding: 10px 20px; /* 내부 여백 */
     border-radius: 10px; /* 모서리 둥글게 */
     transition: transform 0.3s ease; /* 애니메이션 효과 */
-    position : relative;
-    display : flex;
-    justify-content: center;
-    top : 60px;
+   
    
   }
   

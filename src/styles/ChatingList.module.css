@@ -1,6 +1,6 @@
 .chatLog {
-    width: 100%;
-    max-width: 400px;
+    position : absolute;
+    width: 410px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -8,6 +8,11 @@
     overflow-y: auto;
     max-height: 300px; /* 원하는 최대 높이 설정 */
     margin-bottom: 10px;
+    z-index:1;
+    bottom : 0;
+    margin-right : 150px;
+    margin-bottom: 75px;
+    height : 200px;
   }
   
   .chatMessage {
