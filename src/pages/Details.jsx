@@ -25,6 +25,7 @@ const Details = () => {
     const exit = () => {
         navigate('/map');
     };
+    
 
     const handleMouseDown = (event) => {
         const clickX = event.clientX;

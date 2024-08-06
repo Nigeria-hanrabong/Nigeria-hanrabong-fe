@@ -1,41 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Ranking.module.css';
 
 const Ranking = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isButtonActive, setIsButtonActive] = useState(false);
   
-  const rankings = [
-    { id : 'Rank', name : "Name", score : "Score"},
-    { id: 1, name: 'Player1', score: 100 },
-    { id: 2, name: 'Player2', score: 90 },
-    { id: 3, name: 'Player3', score: 80 },
-    { id: 4, name: 'Player4', score: 70 },
-    { id: 5, name: 'Player5', score: 60 },
-    { id: 6, name: 'Player6', score: 50 },
-    { id: 7, name: 'Player7', score: 40 },
-    { id: 8, name: 'Player8', score: 30 },
-    { id: 9, name: 'Player9', score: 20 },
-    { id: 10, name: 'Player10', score: 10 },
-    { id: 11, name: 'Player11', score: 30 },
-  ];
+  const [isVisible, setIsVisible] = useState(true);
+  const [rankings, setRankings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
   };
+
+  
+  fetch("https://2fe3-123-214-153-130.ngrok-free.app/api/v1/users/ranking", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(response => {
+      
+    
+
+      return response.json();
+  })
+  .then(data => {
+    console.log("Response:", data); // 응답 데이터를 콘솔에 출력
+    setRankings(data.data || []); // 데이터를 설정
+    setLoading(false);
+  })
+  .catch(error => {
+    console.error("Fetch error:", error);
+    setError(error.message);
+    setLoading(false);
+  });
+    
+    
+  
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className={styles.rankingContainer}>
       <div className={styles.title}>
         <div className={styles.rankTitle}>현재 랭킹</div>
-    
+        <button onClick={toggleVisibility}>
+          {isVisible ? 'Hide' : 'Show'} Rankings
+        </button>
       </div>
       {isVisible && (
         <div className={styles.rankingList}>
-          {rankings.map(player => (
-            <div key={player.id} className={styles.rankingItem}>
+          {rankings.map((player, index) => (
+            <div key={index} className={styles.rankingItem}>
               <span>{player.id}</span>
-              <span>{player.name}</span>
+              <span>{player.nickname}</span>
               <span>{player.score}</span>
             </div>
           ))}

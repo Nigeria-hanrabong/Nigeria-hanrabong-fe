@@ -3,7 +3,7 @@ import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 import styles from '../styles/Chating.module.css';
 
-const Chating = (props) => {
+const Chating = () => {
   const [showChatingList, setShowChatingList] = useState(false);
   const [messages, setMessages] = useState([
     { content: "안녕하세요", sender: "Alice" },
@@ -19,13 +19,13 @@ const Chating = (props) => {
   const messagesEndRef = useRef(null);
   const clientRef = useRef(null);
 
-  const {username} = props;
+  const nickname = localStorage.getItem('nickname');
   const handleButtonClick = () => {
     setShowChatingList(!showChatingList);
   };
 
   useEffect(() => {
-    const socket = new SockJS('http://localhost:8080/chat'); // 백엔드 엔드포인트
+    const socket = new SockJS('http://19f1-123-214-153-130.ngrok-free.app/sendmessage'); // 백엔드 엔드포인트
     const client = new Client({
       webSocketFactory: () => socket,
       onConnect: () => {
@@ -48,7 +48,7 @@ const Chating = (props) => {
 
   const sendMessage = () => {
     if (content.trim() && clientRef.current.connected) {
-      const message = { content: content, sender: {username} }; // 여기서 username을 적절히 설정해야 합니다
+      const message = { content: content, sender: {nickname} }; // 여기서 username을 적절히 설정해야 합니다
       clientRef.current.publish({
         destination: '/app/sendMessage',
         body: JSON.stringify(message),
