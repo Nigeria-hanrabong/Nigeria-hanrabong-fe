@@ -1,7 +1,8 @@
+import styles from '../styles/Welcome.module.css';
+import teamLogo from '../assets/Team_logo.png';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '../styles/Welcome.module.css';
-import teamLogo from '../assets/Team_logo.png'; // 이미지 불러오기
+import { backend, frontend } from '../constants/domain'
 
 
 const Welcome = () => {
@@ -10,30 +11,27 @@ const Welcome = () => {
     const [helperTextVisibility, setHelperTextVisibility] = useState('hidden');
 
     const moveToMap = async () => {
+
         if (!nickname || /\s/.test(nickname) || nickname.length >= 8) {
             setHelperTextVisibility('visible');
             return;
         }
 
-        try {
-            const response = await fetch(`https://19f1-123-214-153-130.ngrok-free.app//api/v1/users?nickname=${nickname}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        fetch(`${backend}/api/v1/users?nickname=${nickname}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
             }
-
-            const result = await response.json();
-            console.log(result);
-
-            navigate('/map');
-        } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
-        }
+        })
+        .then(response => {
+            if(response.status === 200) {
+                localStorage.setItem('nickname', nickname);
+                navigate('/map'); 
+            }  
+        })
+        .catch(e => {
+            console.log(e);
+        })
     };
 
     const updateNicknameInput = (e) => {

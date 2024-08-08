@@ -25,6 +25,8 @@
 
   color :#D9EAF7;
 
+  pointer-events: none;
+
 }
 
 .pinLabel {

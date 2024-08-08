@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Client } from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
 import styles from '../styles/Chating.module.css';
+import { backend, frontend } from '../constants/domain'
 
 const Chating = () => {
   const [showChatingList, setShowChatingList] = useState(false);
@@ -25,11 +26,11 @@ const Chating = () => {
   };
 
   useEffect(() => {
-    const socket = new SockJS('http://19f1-123-214-153-130.ngrok-free.app/sendmessage'); // 백엔드 엔드포인트
+    const socket = new SockJS(`${backend}/chat`); // 백엔드 엔드포인트
     const client = new Client({
       webSocketFactory: () => socket,
       onConnect: () => {
-        client.subscribe('/topic/messages', (message) => { // STOMP 프로토콜 요청 엔드포인트
+        client.subscribe('/topic', (message) => { // STOMP 프로토콜 요청 엔드포인트
           const body = JSON.parse(message.body);
           setMessages((prevMessages) => [...prevMessages, body]);
         });
@@ -50,7 +51,7 @@ const Chating = () => {
     if (content.trim() && clientRef.current.connected) {
       const message = { content: content, sender: {nickname} }; // 여기서 username을 적절히 설정해야 합니다
       clientRef.current.publish({
-        destination: '/app/sendMessage',
+        destination: '/app/send',
         body: JSON.stringify(message),
       });
       setMessages((prevMessages) => [...prevMessages, message]); // 로컬에서도 메시지 추가

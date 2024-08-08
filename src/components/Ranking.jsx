@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Ranking.module.css';
+import { backend, frontend } from '../constants/domain'
 
 const Ranking = () => {
   
@@ -14,20 +15,16 @@ const Ranking = () => {
   };
 
   
-  fetch("https://2fe3-123-214-153-130.ngrok-free.app/api/v1/users/ranking", {
+  fetch(`${backend}/api/v1/users/ranking`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     }
   })
   .then(response => {
-      
-    
-
       return response.json();
   })
   .then(data => {
-    console.log("Response:", data); // 응답 데이터를 콘솔에 출력
     setRankings(data.data || []); // 데이터를 설정
     setLoading(false);
   })
@@ -52,15 +49,13 @@ const Ranking = () => {
     <div className={styles.rankingContainer}>
       <div className={styles.title}>
         <div className={styles.rankTitle}>현재 랭킹</div>
-        <button onClick={toggleVisibility}>
-          {isVisible ? 'Hide' : 'Show'} Rankings
-        </button>
+        
       </div>
       {isVisible && (
         <div className={styles.rankingList}>
           {rankings.map((player, index) => (
             <div key={index} className={styles.rankingItem}>
-              <span>{player.id}</span>
+              {<span>{index+1}</span> }
               <span>{player.nickname}</span>
               <span>{player.score}</span>
             </div>
