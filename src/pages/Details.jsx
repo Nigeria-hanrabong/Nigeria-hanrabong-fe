@@ -4,9 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Details.module.css'
 import fishingLob from '../assets/‘DALL·E 2024-08-05 23.06.32 - A detailed view of a fishing rod from a far perspective. The scene shows the entire fishing rod extending out over a serene lake, with lush greenery i 복사본 3_1’의 배경이 제거됨.png';
 import questionIcon from '../assets/question.png'
-import point from '../assets/‘낚시찌’의 배경이 제거됨.png'
+import rod from '../assets/‘낚시찌’의 배경이 제거됨.png'
 import { useParams } from 'react-router-dom'; 
 import FishSuccessModal from '../components/FishSuccessModal'; // FishSuccessModal 컴포넌트 임포트
+import { backend, frontend } from '../constants/domain'
+
+
 const Details = () => {
     const { name } = useParams();
     const navigate = useNavigate();
@@ -18,6 +21,18 @@ const Details = () => {
     const [line, setLine] = useState(null);
     const [isShaking, setIsShaking] = useState(false);
     const [showModal, setShowModal] = useState(false);
+
+
+    const [fish, setFish] = useState("");
+    const [point, setPoint] = useState("");
+    const [placeName, setPlaceName] = useState("");
+    const [placeUrl, setPlaceUrl] = useState("");
+    const [roadAddressName, setRoadAddressName] = useState("");
+
+    
+                    
+                    
+                
 
     const timeoutRef = useRef(null);
     const shakeTimeoutRef = useRef(null);
@@ -34,32 +49,51 @@ const Details = () => {
         setPosition({ x: clickX, y: clickY });
         setLine({ x1: initX, y1: initY, x2: clickX, y2: clickY });
 
-        const randomDelay = Math.random() * (10000 - 5000) + 5000; // 5초에서 10초 사이의 랜덤 시간
+        // const randomDelay = Math.random() * (10000 - 5000) + 5000; // 5초에서 10초 사이의 랜덤 시간
+        const randomDelay = 2500
         timeoutRef.current = setTimeout(() => {
             setIsShaking(true);
             shakeTimeoutRef.current = setTimeout(() => {
                 if (isShaking) {
-                    alert('실패했습니다.');
+                    
                     setIsShaking(false);
                 }
             }, 3000); // 3초 동안 애니메이션 실행
         }, randomDelay);
     };
 
-    const handleMouseUp = () => {
+    const handleMouseUp = async () => {
         clearTimeout(timeoutRef.current);
         clearTimeout(shakeTimeoutRef.current);
 
         if (isShaking) {
+            await fetch(`${backend}/api/v1/fishing?location=${localStorage.getItem("location")}&nickname=${localStorage.getItem("nickname")}`)
+                .then(response => {
+                    if(response.status === 200) {
+                        return response.json();
+                    }
+                })
+                .then(json => {
+                    console.log(json)
+                    setFish(json.fish);
+                    setPoint(json.point)
+                    setPlaceName(json.placeName)
+                    setPlaceUrl(json.placeUrl)
+                    setRoadAddressName(json.roadAddressName)
+                })
+                
+            
             setShowModal(true);
-        }else {
-            alert('실패했습니다.');
         }
 
         setIsShaking(false);
         setPosition({ x: initX, y: initY });
         setLine(null);
     };
+
+    const onClose = () => {
+        setShowModal(false)
+    }
 
     useEffect(() => {
         return () => {
@@ -92,7 +126,7 @@ const Details = () => {
                     </svg>
                 )}
 
-                <img src={point} alt="" className={`${styles.circle} ${isShaking ? styles.shaking : ''}`} id='circle' style={{
+                <img src={rod} alt="" className={`${styles.circle} ${isShaking ? styles.shaking : ''}`} id='circle' style={{
                     position: 'absolute',
                     left: `${position.x}px`,
                     top: `${position.y}px`,
@@ -101,7 +135,17 @@ const Details = () => {
 
                 <img className={styles.fishingRod} src={fishingLob} alt="낚시대" />
 
-                {showModal && <FishSuccessModal isOpen={showModal} name = {name} onClose={() => setShowModal(false)} />}
+                {showModal && <FishSuccessModal 
+                    isOpen={showModal} 
+                    name = {name} 
+                    fish = {fish}
+                    point = {point}
+                    placeName = {placeName}
+                    placeUrl= {placeUrl}
+                    roadAddressName={roadAddressName}
+                    showModal = {onClose}
+
+                     />}
             </div>
         </>
     );

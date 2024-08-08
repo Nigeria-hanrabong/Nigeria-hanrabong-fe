@@ -6,6 +6,7 @@ const JejuMap = () => {
 
     const handlePinClick = (location,name) => {
       alert(`${location}에 오신것을 환영합니다!`);
+      localStorage.setItem("location", name)
       navigate(`/details/${name}`);
     };
   
@@ -13,18 +14,19 @@ const JejuMap = () => {
       
 
         <div className={styles.mapContainer}>
-        <img
-          src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2021/02/urbanbrush-20210218222336410564.jpg"
-          alt="Jeju Map"
-          className={styles.jejuMap}
-        />
-        <div
-          className={styles.mapPin}
-          onClick={() => handlePinClick('제주시','제주')}
-        >
-          <span className={styles.pinLabel}>제주시</span>
+          <img
+            src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2021/02/urbanbrush-20210218222336410564.jpg"
+            alt="Jeju Map"
+            className={styles.jejuMap}
+          />
+
+          <div
+            className={styles.mapPin}
+            onClick={() => handlePinClick('제주시','제주시')}
+          >
+            <span className={styles.pinLabel}>제주시</span>
           
-        </div>
+          </div>
 
 
         <div
@@ -100,7 +102,7 @@ const JejuMap = () => {
         <div
           className={styles.mapPin10}
 
-          onClick={() => handlePinClick('한림읍','한림')}
+          onClick={() => handlePinClick('한림읍','한림읍')}
         >
           <span className={styles.pinLabel}>한림읍</span>
           
@@ -114,7 +116,7 @@ const JejuMap = () => {
           <span className={styles.pinLabel}>한경면</span>
           
         </div>
-        {/* 다른 핀 추가 가능 */}
+        
       </div>
 
     );

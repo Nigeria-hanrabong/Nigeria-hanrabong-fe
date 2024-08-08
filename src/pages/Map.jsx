@@ -13,7 +13,6 @@ const Map = () => {
       <Logo />
       <JejuMap />
       <Chating /> 
-
     </div>
     );
     
